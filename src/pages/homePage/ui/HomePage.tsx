@@ -5,10 +5,10 @@ import { Loader } from '@/shared/ui/'
 import styles from './HomePage.module.scss'
 
 export const HomePage: React.FC = () => {
-  const [page, setPage] = useState(1)
+  const [page] = useState(1)
   const [limit, setLimit] = useState(15)
   const [loadingMore, setLoadingMore] = useState(false)
-  const { data, isError, isFetching } = useGetPostsQuery({
+  const { data, isFetching, isError } = useGetPostsQuery({
     page,
     limit,
   })
@@ -27,8 +27,8 @@ export const HomePage: React.FC = () => {
     }
   }, [isFetching])
 
-  // if (isFetching) return <Loader />
-  // if (isError) return <p>Ошибка при загрузке постов</p>
+  if (isFetching) return <Loader />
+  if (isError) return <p>Ошибка при загрузке постов</p>
 
   return (
     <main className={styles.homePage}>
