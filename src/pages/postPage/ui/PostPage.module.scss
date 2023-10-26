@@ -1,0 +1,41 @@
+.fullPost {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+}
+
+.fullPost__title {
+  padding: 1rem 0 1rem 0;
+}
+
+.fullPost__info {
+  display: flex;
+  align-items: center;
+  color: #2d334a;
+  margin-bottom: 1rem;
+}
+
+.fullPost__chip {
+  background-color: #bae8e8 !important;
+  color: #2d334a !important;
+}
+
+.fullPost__content {
+  color: #2d334a;
+  margin-bottom: 1rem;
+}
+
+.fullPost__button {
+  max-width: 200px;
+  margin-left: auto;
+}
+
+.info__author {
+  display: flex;
+  margin-right: 1rem;
+
+  svg {
+    margin-right: 0.4rem;
+  }
+}
