@@ -18,7 +18,6 @@ export const PostCell: React.FC<PostCellProps> = ({
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    skip: !isLast,
     threshold: 0.5,
   })
 
@@ -30,9 +29,8 @@ export const PostCell: React.FC<PostCellProps> = ({
 
   return (
     <TableRow
-      ref={isLast ? ref : undefined}
+      ref={ref}
       key={post.id}
-      style={{ background: `${inView ? 'green' : 'pink'}` }}
     >
       <TableCell>{post.id}</TableCell>
       <TableCell>{post.title}</TableCell>

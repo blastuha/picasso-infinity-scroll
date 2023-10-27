@@ -14,8 +14,7 @@ export const HomePage: React.FC = () => {
   })
 
   const loadMorePosts = () => {
-    if (!isFetching && !loadingMore) {
-      // setPage((prevPage) => prevPage + 1)
+    if (!isFetching && !loadingMore && data && data.length < 26) {
       setLoadingMore(true)
       setLimit((prevLimit) => prevLimit + 5)
     }
@@ -25,7 +24,7 @@ export const HomePage: React.FC = () => {
     if (!isFetching) {
       setLoadingMore(false)
     }
-  }, [isFetching])
+  }, [isFetching, data])
 
   if (isFetching) return <Loader />
   if (isError) return <p>Ошибка при загрузке постов</p>
